@@ -1,6 +1,6 @@
 from .window import Window
 from .main_page import MainPage
-from .Resumes import Resumes
+from .resumes import Resumes
 
 
 class MainView:

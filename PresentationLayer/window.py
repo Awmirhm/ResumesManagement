@@ -30,7 +30,7 @@ class Window(Tk):
         self.mainloop()
 
     def size(self, event):
-        self.image = Image.open("C:/Users/Maxsys/Pictures/flat-lay-desk-concept-with-copy-space_23-2148459512.jpg")
+        self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")

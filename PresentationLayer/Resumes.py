@@ -14,6 +14,7 @@ class Resumes(Frame):
         self.grid_rowconfigure(0, weight=1)
 
         self.canvas = Canvas(self, highlightthickness=0, bd=0)
+        self.canvas.grid_columnconfigure(0,weight=1)
         self.canvas.grid(row=0, column=0, sticky="nsew")
 
         self.image = None
@@ -22,7 +23,7 @@ class Resumes(Frame):
 
         self.canvas.bind("<Configure>", self.size)
 
-        self.header = LabelFrame(self, text="Resumes", borderwidth=5)
+        self.header = LabelFrame(self.canvas, text="Resumes", borderwidth=5)
         self.header.grid_columnconfigure(1, weight=1)
         self.header.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="nsew")
 
@@ -52,7 +53,7 @@ class Resumes(Frame):
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")
-        self.canvas.create_window(0, 0, window=self.header, anchor="nw")
+        # self.canvas.create_window(0, 0, window=self.header, anchor="nw")
 
     def back_button(self):
         self.view.switch("main_page")

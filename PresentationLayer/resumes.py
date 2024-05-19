@@ -45,7 +45,7 @@ class Resumes(Frame):
                                      font=self.font_label)
         self.firstname_label.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="w")
 
-        self.firstname_entry = Entry(self.header, borderwidth=2, background="#EAD7BB",font=self.font_entry)
+        self.firstname_entry = Entry(self.header, borderwidth=2, background="#EAD7BB", font=self.font_entry)
         self.firstname_entry.grid(row=0, column=1, padx=(0, 10), pady=(10, 10), sticky="ew")
 
         # Last Name
@@ -53,7 +53,7 @@ class Resumes(Frame):
                                     font=self.font_label)
         self.lastname_label.grid(row=1, column=0, padx=(10, 10), pady=(0, 10), sticky="w")
 
-        self.lastname_entry = Entry(self.header, borderwidth=2, background="#EAD7BB",font=self.font_entry)
+        self.lastname_entry = Entry(self.header, borderwidth=2, background="#EAD7BB", font=self.font_entry)
         self.lastname_entry.grid(row=1, column=1, padx=(0, 10), pady=(0, 10), sticky="ew")
 
         # Birthday
@@ -85,7 +85,7 @@ class Resumes(Frame):
                                  font=self.font_label)
         self.skill_label.grid(row=4, column=0, padx=(10, 10), pady=(0, 10), sticky="w")
 
-        self.skill_entry = Entry(self.header, borderwidth=2, background="#EAD7BB",font=self.font_entry)
+        self.skill_entry = Entry(self.header, borderwidth=2, background="#EAD7BB", font=self.font_entry)
         self.skill_entry.grid(row=4, column=1, padx=(0, 10), pady=(0, 10), sticky="ew")
 
         # Email
@@ -93,7 +93,7 @@ class Resumes(Frame):
                                  font=self.font_label)
         self.email_label.grid(row=5, column=0, padx=(10, 10), pady=(0, 10), sticky="w")
 
-        self.email_entry = Entry(self.header, borderwidth=2, background="#EAD7BB",font=self.font_entry)
+        self.email_entry = Entry(self.header, borderwidth=2, background="#EAD7BB", font=self.font_entry)
         self.email_entry.grid(row=5, column=1, padx=(0, 10), pady=(0, 10), sticky="ew")
 
         # Photo

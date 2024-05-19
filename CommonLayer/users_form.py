@@ -2,14 +2,14 @@ from .basic_user import User
 
 
 class UsersForm(User):
-    def __init__(self, id, firstname, lastname, birthday, gender, skills, email, photo):
+    def __init__(self, id, firstname, lastname, birthday, gender, skills, email, image):
         super().__init__(id, firstname, lastname)
 
         self.birthday = birthday
         self.gender = gender
         self.skills = skills
         self.email = email
-        self.photo = photo
+        self.image = image
 
     @classmethod
     def create_with_tuple(cls, data: tuple):

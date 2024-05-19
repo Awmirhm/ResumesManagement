@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 
 
 class Window(Tk):
-    def __init__(self, weight=1200, height=800):
+    def __init__(self, weight=1300, height=900):
         super().__init__()
 
         self.grid_columnconfigure(0, weight=1)

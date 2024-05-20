@@ -1,7 +1,13 @@
 from .basic_user import User
+from .descriptor import LengthDescriptor
+from .descriptor import DateDescriptor
 
 
 class UsersForm(User):
+    birthday = DateDescriptor()
+    skills = LengthDescriptor(6)
+    email = LengthDescriptor(6)
+
     def __init__(self, id, firstname, lastname, birthday, gender, skills, email, image):
         super().__init__(id, firstname, lastname)
 

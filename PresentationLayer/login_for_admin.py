@@ -19,6 +19,8 @@ class LoginAdmin(Frame):
 
         self.font_label = Font(family="Serif", size=14, weight="bold")
 
+        self.font_entry = Font(family="Serif", size=12, weight="bold")
+
         self.canvas = Canvas(self, highlightthickness=0, bd=0)
         self.canvas.grid_columnconfigure(0, weight=1)
         self.canvas.grid_rowconfigure(0, weight=1)
@@ -40,16 +42,18 @@ class LoginAdmin(Frame):
                                     font=self.font_label)
         self.username_label.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="w")
 
-        self.username_entry = Entry(self.header, borderwidth=2)
+        self.username_entry = Entry(self.header, borderwidth=2, font=self.font_entry)
         self.username_entry.grid(row=0, column=1, padx=(0, 10), pady=(10, 10), sticky="ew")
+        self.username_entry.insert(0, "a.hm")
 
         # Password
         self.password_label = Label(self.header, text="Password :", background="#191919", foreground="white",
                                     font=self.font_label)
         self.password_label.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="w")
 
-        self.password_entry = Entry(self.header, borderwidth=2, show="*")
+        self.password_entry = Entry(self.header, borderwidth=2, show="*", font=self.font_entry)
         self.password_entry.grid(row=1, column=1, padx=(0, 10), pady=(10, 0), sticky="ew")
+        self.password_entry.insert(0, "Amir123456")
 
         # Login Button
         self.image_save_button_tk = ImageTk.PhotoImage(
@@ -85,7 +89,8 @@ class LoginAdmin(Frame):
         if error_message:
             messagebox.showerror(title="Error", message=error_message)
         else:
-            print("Hi")
+            home_frame = self.view.switch("home")
+            home_frame.set_current_user(user)
 
     def back_button_clicked(self):
         self.view.switch("main_page")

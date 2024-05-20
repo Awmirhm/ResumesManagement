@@ -1,4 +1,4 @@
-from tkinter import Frame, LabelFrame, Label, Button, Entry, Canvas, Radiobutton, IntVar, messagebox
+from tkinter import Frame, LabelFrame, Label, Button, Entry, Canvas, Radiobutton, IntVar, messagebox, END
 from tkcalendar import DateEntry
 from tkinter.font import Font
 from tkinter.filedialog import askopenfilename
@@ -167,6 +167,15 @@ class Resumes(Frame):
             messagebox.showerror(title="Error", message=error_message)
         else:
             messagebox.showinfo(title="Info", message=save_message)
+            self.firstname_entry.delete(0, END)
+            self.lastname_entry.delete(0, END)
+            self.skill_entry.delete(0, END)
+            self.email_entry.delete(0, END)
+            self.photo_label.config()
 
     def back_button_clicked(self):
         self.view.switch("main_page")
+        self.firstname_entry.delete(0, END)
+        self.lastname_entry.delete(0, END)
+        self.skill_entry.delete(0, END)
+        self.email_entry.delete(0, END)

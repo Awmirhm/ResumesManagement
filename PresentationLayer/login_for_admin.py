@@ -1,11 +1,14 @@
 from tkinter import Frame, LabelFrame, Label, Entry, Button, messagebox, END, Canvas
 from tkinter.font import Font
 from PIL import Image, ImageTk
+from BusinessLogicLayer.admin_business import AdminBusiness
 
 
 class LoginAdmin(Frame):
     def __init__(self, view, window):
         super().__init__(window)
+
+        self.admin_business = AdminBusiness()
 
         self.view = view
 
@@ -45,7 +48,7 @@ class LoginAdmin(Frame):
                                     font=self.font_label)
         self.password_label.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="w")
 
-        self.password_entry = Entry(self.header, borderwidth=2)
+        self.password_entry = Entry(self.header, borderwidth=2, show="*")
         self.password_entry.grid(row=1, column=1, padx=(0, 10), pady=(10, 0), sticky="ew")
 
         # Login Button
@@ -53,7 +56,7 @@ class LoginAdmin(Frame):
             Image.open("C:/Users/Maxsys/Pictures/login_14018816.png").resize(size=(100, 100)))
 
         self.login_button = Button(self.header, image=str(self.image_save_button_tk), borderwidth=0,
-                                   background="#191919", activebackground="#191919")
+                                   background="#191919", activebackground="#191919", command=self.login_button_clicked)
         self.login_button.grid(row=2, column=1, padx=(0, 10), pady=(0, 0), sticky="w")
 
         # Back
@@ -70,6 +73,19 @@ class LoginAdmin(Frame):
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")
+
+    def login_button_clicked(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+
+        result = self.admin_business.login(username, password)
+        user = result[0]
+        error_message = result[1]
+
+        if error_message:
+            messagebox.showerror(title="Error", message=error_message)
+        else:
+            print("Hi")
 
     def back_button_clicked(self):
         self.view.switch("main_page")

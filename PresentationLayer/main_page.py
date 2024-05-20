@@ -38,14 +38,14 @@ class MainPage(Frame):
                 size=(100, 100)))
 
         self.admin_button = Button(self, text="Admin", image=str(self.image_admin_button_tk), borderwidth=0,
-                                   compound="top", font=self.font)
+                                   compound="top", font=self.font, command=self.admin_button_clicked)
         self.admin_button.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="w")
 
         self.image_exit_button_tk = ImageTk.PhotoImage(
             Image.open("C:/Users/Maxsys/Pictures/1824420.png").resize(size=(100, 100)))
 
         self.exit_button = Button(self, text="Exit", image=str(self.image_exit_button_tk), borderwidth=0,
-                                  compound="top", font=self.font,command=self.exit_button_clicked)
+                                  compound="top", font=self.font, command=self.exit_button_clicked)
         self.exit_button.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="sw")
 
     def size(self, event):
@@ -56,6 +56,9 @@ class MainPage(Frame):
 
     def resumes_button_clicked(self):
         self.view.switch("resumes")
+
+    def admin_button_clicked(self):
+        self.view.switch("login")
 
     def exit_button_clicked(self):
         self.window.destroy()

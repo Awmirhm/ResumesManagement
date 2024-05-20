@@ -109,7 +109,7 @@ class Resumes(Frame):
 
         self.photo_button = Button(self.header, image=str(self.image_photo_button_tk), borderwidth=0,
                                    background="#F39F5A", text="Choose your photo", compound="top", font=self.font_label,
-                                   command=self.photo_button_clicked, foreground="#31363F")
+                                   command=self.photo_button_clicked, foreground="#31363F", activebackground="#F39F5A")
         self.photo_button.grid(row=6, column=1, padx=(0, 10), pady=(0, 10), sticky="w")
 
         # Save Button
@@ -118,16 +118,16 @@ class Resumes(Frame):
 
         self.save_button = Button(self.header, image=str(self.image_save_button_tk), background="#F39F5A",
                                   borderwidth=0, text="Save", compound="top", font=self.font_label, pady=10,
-                                  foreground="#31363F", command=self.save_button_clicked)
+                                  foreground="#31363F", command=self.save_button_clicked, activebackground="#F39F5A")
         self.save_button.grid(row=7, column=1, padx=(45, 10), pady=(0, 10), sticky="w")
 
         # Back
         self.image_back_button_tk = ImageTk.PhotoImage(
             Image.open("C:/Users/Maxsys/Pictures/rewind_5542199.png").resize(size=(100, 100)))
 
-        self.back = Button(self.header, text="Back", command=self.back_button, borderwidth=0,
+        self.back = Button(self.header, text="Back", command=self.back_button_clicked, borderwidth=0,
                            image=str(self.image_back_button_tk), background="#F39F5A", compound="top",
-                           font=self.font_label, pady=10, foreground="#31363F")
+                           font=self.font_label, pady=10, foreground="#31363F", activebackground="#F39F5A")
         self.back.grid(row=7, column=1, padx=(0, 50), pady=(0, 10), sticky="e")
 
     def size(self, event):
@@ -168,5 +168,5 @@ class Resumes(Frame):
         else:
             messagebox.showinfo(title="Info", message=save_message)
 
-    def back_button(self):
+    def back_button_clicked(self):
         self.view.switch("main_page")

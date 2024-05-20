@@ -13,8 +13,7 @@ class AdminDataAccess:
                     SELECT id,
                            first_name,
                            last_name,
-                           username,
-                           password
+                           username
                     FROM Users_Admin
                     WHERE  username = ?
                     AND   password = ?""", [username, password]).fetchone()
@@ -24,3 +23,19 @@ class AdminDataAccess:
                 return user
             else:
                 return None
+
+    def return_all_password(self):
+        passwords = []
+        with sqlite3.connect(self.data_base_name) as connection:
+            cursor = connection.cursor()
+            data = cursor.execute("""
+                    SELECT id,
+                           first_name,
+                           last_name,
+                           username,
+                           password
+                    FROM Users_Admin""").fetchall()
+
+            for item in data:
+                passwords.append(item[4])
+            return passwords

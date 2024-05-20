@@ -1,18 +1,22 @@
-from tkinter import Frame, LabelFrame, Label, Button, Entry, Canvas, Radiobutton, IntVar
+from tkinter import Frame, LabelFrame, Label, Button, Entry, Canvas, Radiobutton, IntVar, messagebox
 from tkcalendar import DateEntry
 from tkinter.font import Font
 from tkinter.filedialog import askopenfilename
 from datetime import date
 from PIL import Image, ImageTk
+from BusinessLogicLayer.form_business import FormBusiness
 
 
 class Resumes(Frame):
     def __init__(self, view, window):
         super().__init__(window)
 
+        self.form_business = FormBusiness()
+
         self.view = view
 
         self.filename = None
+        self.image_data = None
         self.show_photo_tk = None
 
         self.grid_columnconfigure(0, weight=1)
@@ -114,7 +118,7 @@ class Resumes(Frame):
 
         self.save_button = Button(self.header, image=str(self.image_save_button_tk), background="#F39F5A",
                                   borderwidth=0, text="Save", compound="top", font=self.font_label, pady=10,
-                                  foreground="#31363F")
+                                  foreground="#31363F", command=self.save_button_clicked)
         self.save_button.grid(row=7, column=1, padx=(45, 10), pady=(0, 10), sticky="w")
 
         # Back
@@ -138,6 +142,31 @@ class Resumes(Frame):
         if self.filename:
             self.show_photo_tk = ImageTk.PhotoImage(Image.open(self.filename).resize(size=(100, 100)))
             self.photo_label.config(image=str(self.show_photo_tk), background="#F39F5A")
+        else:
+            self.filename = None
+
+    def save_button_clicked(self):
+        firstname = self.firstname_entry.get()
+        lastname = self.lastname_entry.get()
+        birthday = self.birthday_entry.get()
+        gender = self.gender_radio_button_var.get()
+        skills = self.skill_entry.get()
+        email = self.email_entry.get()
+
+        if self.filename:
+            with open(self.filename, mode="rb") as image:
+                self.image_data = image.read()
+        else:
+            pass
+
+        result = self.form_business.get_form(firstname, lastname, birthday, gender, skills, email, self.image_data)
+        save_message = result[0]
+        error_message = result[1]
+
+        if error_message:
+            messagebox.showerror(title="Error", message=error_message)
+        else:
+            messagebox.showinfo(title="Info", message=save_message)
 
     def back_button(self):
         self.view.switch("main_page")

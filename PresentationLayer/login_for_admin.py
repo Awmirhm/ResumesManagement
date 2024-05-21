@@ -89,6 +89,8 @@ class LoginAdmin(Frame):
         else:
             home_frame = self.view.switch("home")
             home_frame.set_current_user(user)
+            self.username_entry.delete(0, END)
+            self.password_entry.delete(0, END)
 
     def back_button_clicked(self):
         self.view.switch("main_page")

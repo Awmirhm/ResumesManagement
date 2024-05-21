@@ -171,7 +171,7 @@ class Resumes(Frame):
             self.lastname_entry.delete(0, END)
             self.skill_entry.delete(0, END)
             self.email_entry.delete(0, END)
-            self.photo_label.config()
+            self.photo_label.config(image="")
 
     def back_button_clicked(self):
         self.view.switch("main_page")
@@ -179,3 +179,4 @@ class Resumes(Frame):
         self.lastname_entry.delete(0, END)
         self.skill_entry.delete(0, END)
         self.email_entry.delete(0, END)
+        self.photo_label.config(image="")

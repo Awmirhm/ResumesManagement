@@ -86,3 +86,6 @@ class ProfileFrame(Frame):
 
     def back_to_home_page_button_clicked(self):
         self.view.switch("home")
+        self.firstname_entry.delete(0, END)
+        self.lastname_entry.delete(0, END)
+        self.username_entry.delete(0, END)

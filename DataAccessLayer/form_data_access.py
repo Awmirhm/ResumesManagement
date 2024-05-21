@@ -29,7 +29,7 @@ class FormDataAccess:
                                    ?,
                                    ?,
                                    ?,
-                                   "{0}")""", [firstname, lastname, birthday, gender, skills, email, image])
+                                   "{1}")""", [firstname, lastname, birthday, gender, skills, email, image])
             connection.commit()
 
     def get_resumes(self, form_id):

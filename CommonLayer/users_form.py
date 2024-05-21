@@ -8,7 +8,7 @@ class UsersForm(User):
     skills = LengthDescriptor(6)
     email = LengthDescriptor(6)
 
-    def __init__(self, id, firstname, lastname, birthday, gender, skills, email, image):
+    def __init__(self, id, firstname, lastname, birthday, gender, skills, email, image, status):
         super().__init__(id, firstname, lastname)
 
         self.birthday = birthday
@@ -16,11 +16,12 @@ class UsersForm(User):
         self.skills = skills
         self.email = email
         self.image = image
+        self.status = status
 
     @classmethod
     def create_with_tuple(cls, data: tuple):
-        return cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7])
+        return cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
 
     @classmethod
     def create_whit_list(cls, data: list):
-        return cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7])
+        return cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])

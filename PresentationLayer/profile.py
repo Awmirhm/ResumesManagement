@@ -31,7 +31,7 @@ class ProfileFrame(Frame):
 
         self.canvas.bind("<Configure>", self.size)
 
-        self.header = LabelFrame(self.canvas, text="Login", labelanchor="n", borderwidth=0, font=self.font,
+        self.header = LabelFrame(self.canvas, text="Profile", labelanchor="n", borderwidth=0, font=self.font,
                                  background="#191919", foreground="white")
         self.header.grid_columnconfigure(1, weight=1)
         self.header.grid_columnconfigure(3, weight=1)

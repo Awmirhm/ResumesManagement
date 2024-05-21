@@ -40,8 +40,21 @@ class HomeFrame(Frame):
 
         self.resumes_button = Button(self.header, image=str(self.image_resumes_button_tk), text="Resumes",
                                      compound="top", borderwidth=0, activebackground="#191919", background="#191919",
-                                     font=self.font_label, pady=10, foreground="#FFD369", activeforeground="#C84B31")
+                                     font=self.font_label, pady=10, foreground="#FFD369", activeforeground="#C84B31"
+                                     , command=self.resumes_button_clicked)
         self.resumes_button.grid(row=0, column=0, padx=(10, 10), pady=(30, 10), sticky="ew")
+
+        # Admin Profile Button
+        self.image_profile_button_tk = ImageTk.PhotoImage(
+            Image.open("C:/Users/Maxsys/Pictures/user_5037329.png").resize(
+                size=(100, 100)
+            ))
+
+        self.admin_profile_button = Button(self.header, image=str(self.image_profile_button_tk),
+                                           borderwidth=0, background="#191919", activebackground="#191919",
+                                           pady=10, font=self.font_label, text="Profile",compound="top",
+                                           foreground="#FFD369",activeforeground="#C84B31")
+        self.admin_profile_button.grid(row=1, column=0, padx=(10, 10), pady=(30, 10), sticky="ew")
 
         # Back
         self.image_back_button_tk = ImageTk.PhotoImage(
@@ -50,7 +63,7 @@ class HomeFrame(Frame):
         self.back = Button(self.header, text="Back", command=self.back_button_clicked, borderwidth=0,
                            image=str(self.image_back_button_tk), background="#191919",
                            activebackground="#191919")
-        self.back.grid(row=1, column=0, padx=(10, 10), pady=(10, 10), sticky="ew")
+        self.back.grid(row=2, column=0, padx=(10, 10), pady=(10, 10), sticky="ew")
 
     def size(self, event):
         self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
@@ -61,6 +74,9 @@ class HomeFrame(Frame):
     def set_current_user(self, user):
         self.current_user = user
         self.header.config(text=f"Wellcome, {self.current_user.firstname} {self.current_user.lastname}")
+
+    def resumes_button_clicked(self):
+        self.view.switch("show_resumes")
 
     def back_button_clicked(self):
         self.view.switch("main_page")

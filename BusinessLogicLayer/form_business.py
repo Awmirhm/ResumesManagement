@@ -42,3 +42,26 @@ class FormBusiness:
         else:
             self.form_data_access.get_form(firstname, lastname, date_value, gender, skills, email, image)
             return ["Your information has been sent successfully \n You will be notified by email", None]
+
+    def update_status_to_accept(self, form_id):
+        self.form_data_access.update_status(2, form_id)
+
+    def update_status_to_reject(self, form_id):
+        self.form_data_access.update_status(3, form_id)
+
+
+class FormIterator:
+    def __init__(self, index=1):
+        self.form_data_access = FormDataAccess()
+        self.__index = index
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        try:
+            form = self.form_data_access.get_resumes(self.__index)
+            self.__index += 1
+            return form
+        except TypeError:
+            raise StopIteration

@@ -209,7 +209,8 @@ class ShowResumesFrame(Frame):
                 else:
                     raise IndexError
         except IndexError:
-            messagebox.showwarning()
+            messagebox.showwarning(title="Warning",
+                                   message=f"There is no resume to display!\nPlease return to the main page. ")
 
     def accept_button_clicked(self):
         self.status_entry.delete(0, END)

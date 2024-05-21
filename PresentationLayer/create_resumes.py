@@ -105,12 +105,12 @@ class Resumes(Frame):
             Image.open("C:/Users/Maxsys/Pictures/1375106.png").resize(size=(100, 100)))
 
         self.photo_label = Label(self.header, background="#F39F5A")
-        self.photo_label.grid(row=6, column=1, padx=(0, 50), pady=(0, 10), sticky="e")
+        self.photo_label.grid(row=8, column=1, padx=(0, 10), pady=(50, 10))
 
         self.photo_button = Button(self.header, image=str(self.image_photo_button_tk), borderwidth=0,
                                    background="#F39F5A", text="Choose your photo", compound="top", font=self.font_label,
                                    command=self.photo_button_clicked, foreground="#31363F", activebackground="#F39F5A")
-        self.photo_button.grid(row=6, column=1, padx=(0, 10), pady=(0, 10), sticky="w")
+        self.photo_button.grid(row=6, column=1, padx=(0, 10), pady=(0, 10))
 
         # Save Button
         self.image_save_button_tk = ImageTk.PhotoImage(
@@ -119,7 +119,7 @@ class Resumes(Frame):
         self.save_button = Button(self.header, image=str(self.image_save_button_tk), background="#F39F5A",
                                   borderwidth=0, text="Save", compound="top", font=self.font_label, pady=10,
                                   foreground="#31363F", command=self.save_button_clicked, activebackground="#F39F5A")
-        self.save_button.grid(row=7, column=1, padx=(45, 10), pady=(0, 10), sticky="w")
+        self.save_button.grid(row=7, column=1, padx=(0, 10), pady=(0, 10), sticky="w")
 
         # Back
         self.image_back_button_tk = ImageTk.PhotoImage(
@@ -140,7 +140,7 @@ class Resumes(Frame):
         file_type = [("Png & Jpg Files", "*png;*jpg")]
         self.filename = askopenfilename(filetypes=file_type)
         if self.filename:
-            self.show_photo_tk = ImageTk.PhotoImage(Image.open(self.filename).resize(size=(100, 100)))
+            self.show_photo_tk = ImageTk.PhotoImage(Image.open(self.filename).resize(size=(200, 200)))
             self.photo_label.config(image=str(self.show_photo_tk), background="#F39F5A")
         else:
             self.filename = None

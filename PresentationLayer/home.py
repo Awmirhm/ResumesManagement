@@ -52,8 +52,9 @@ class HomeFrame(Frame):
 
         self.admin_profile_button = Button(self.header, image=str(self.image_profile_button_tk),
                                            borderwidth=0, background="#191919", activebackground="#191919",
-                                           pady=10, font=self.font_label, text="Profile",compound="top",
-                                           foreground="#FFD369",activeforeground="#C84B31")
+                                           pady=10, font=self.font_label, text="Profile", compound="top",
+                                           foreground="#FFD369", activeforeground="#C84B31",
+                                           command=self.admin_profile_button_clicked)
         self.admin_profile_button.grid(row=1, column=0, padx=(10, 10), pady=(30, 10), sticky="ew")
 
         # Back
@@ -77,6 +78,10 @@ class HomeFrame(Frame):
 
     def resumes_button_clicked(self):
         self.view.switch("show_resumes")
+
+    def admin_profile_button_clicked(self):
+        profile_frame = self.view.switch("profile")
+        profile_frame.set_current_user_for_profile(self.current_user)
 
     def back_button_clicked(self):
         self.view.switch("main_page")

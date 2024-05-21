@@ -4,6 +4,7 @@ from .create_resumes import Resumes
 from .login_for_admin import LoginAdmin
 from .home import HomeFrame
 from .show_resumes import ShowResumesFrame
+from .profile import ProfileFrame
 
 
 class MainView:
@@ -13,6 +14,7 @@ class MainView:
         self.frames = {}
 
         self.add_frame("resumes", Resumes(self, self.window))
+        self.add_frame("profile", ProfileFrame(self, self.window))
         self.add_frame("show_resumes", ShowResumesFrame(self, self.window))
         self.add_frame("home", HomeFrame(self, self.window))
         self.add_frame("login", LoginAdmin(self, self.window))

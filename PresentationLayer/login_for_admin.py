@@ -44,7 +44,6 @@ class LoginAdmin(Frame):
 
         self.username_entry = Entry(self.header, borderwidth=2, font=self.font_entry)
         self.username_entry.grid(row=0, column=1, padx=(0, 10), pady=(10, 10), sticky="ew")
-        self.username_entry.insert(0, "a.hm")
 
         # Password
         self.password_label = Label(self.header, text="Password :", background="#191919", foreground="white",
@@ -53,7 +52,6 @@ class LoginAdmin(Frame):
 
         self.password_entry = Entry(self.header, borderwidth=2, show="*", font=self.font_entry)
         self.password_entry.grid(row=1, column=1, padx=(0, 10), pady=(10, 0), sticky="ew")
-        self.password_entry.insert(0, "Amir123456")
 
         # Login Button
         self.image_save_button_tk = ImageTk.PhotoImage(

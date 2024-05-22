@@ -16,7 +16,7 @@ class AdminDataAccess:
                            username
                     FROM Users_Admin
                     WHERE  username = ?
-                    AND   password = ?""", [username, password]).fetchone()
+                    AND    password = ?""", [username, password]).fetchone()
 
             if data:
                 user = UsersAdmin.create_with_tuple(data)

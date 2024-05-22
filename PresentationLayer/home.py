@@ -1,6 +1,7 @@
 from tkinter import Frame, Button, Label, LabelFrame, Canvas
 from tkinter.font import Font
 from PIL import Image, ImageTk
+from BusinessLogicLayer.admin_business import AdminBusiness
 
 
 class HomeFrame(Frame):
@@ -84,4 +85,4 @@ class HomeFrame(Frame):
         profile_frame.set_current_user_for_profile(self.current_user)
 
     def back_button_clicked(self):
-        self.view.switch("main_page")
+        self.view.switch("login")

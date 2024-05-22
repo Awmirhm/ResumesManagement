@@ -18,6 +18,7 @@ class AdminBusiness:
             if pbkdf2_sha256.verify(password, item):
                 self.user = self.admin_data_access.get_user(username, item)
                 break
+            self.user = None
 
         if self.user:
             return [self.user, None]

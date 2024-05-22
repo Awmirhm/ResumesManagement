@@ -43,6 +43,7 @@ class LoginAdmin(Frame):
         self.username_label.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="w")
 
         self.username_entry = Entry(self.header, borderwidth=2, font=self.font_entry)
+        self.username_entry.focus()
         self.username_entry.grid(row=0, column=1, padx=(0, 10), pady=(10, 10), sticky="ew")
 
         # Password
@@ -91,6 +92,7 @@ class LoginAdmin(Frame):
             home_frame.set_current_user(user)
             self.username_entry.delete(0, END)
             self.password_entry.delete(0, END)
+            self.username_entry.focus()
 
     def back_button_clicked(self):
         self.view.switch("main_page")

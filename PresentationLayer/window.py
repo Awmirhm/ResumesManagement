@@ -1,5 +1,4 @@
 from tkinter import Tk, Canvas, Button
-from tkinter.font import Font
 from PIL import Image, ImageTk
 
 

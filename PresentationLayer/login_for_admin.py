@@ -56,7 +56,7 @@ class LoginAdmin(Frame):
 
         # Login Button
         self.image_save_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/login_14018816.png").resize(size=(100, 100)))
+            Image.open("Images/login_14018816.png").resize(size=(100, 100)))
 
         self.login_button = Button(self.header, image=str(self.image_save_button_tk), borderwidth=0,
                                    background="#191919", activebackground="#191919", command=self.login_button_clicked)
@@ -64,7 +64,7 @@ class LoginAdmin(Frame):
 
         # Back
         self.image_back_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/back_14018855.png").resize(size=(100, 100)))
+            Image.open("Images/back_14018855.png").resize(size=(100, 100)))
 
         self.back = Button(self.header, text="Back", command=self.back_button_clicked, borderwidth=0,
                            image=str(self.image_back_button_tk), background="#191919",
@@ -72,7 +72,7 @@ class LoginAdmin(Frame):
         self.back.grid(row=3, column=1, padx=(0, 10), pady=(0, 10), sticky="w")
 
     def size(self, event):
-        self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
+        self.image = Image.open("Images/black-abstract-dark-3840x2160-9729.jpg")
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")

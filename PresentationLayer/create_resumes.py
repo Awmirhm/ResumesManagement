@@ -102,7 +102,7 @@ class Resumes(Frame):
 
         # Photo
         self.image_photo_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/1375106.png").resize(size=(100, 100)))
+            Image.open("Images/1375106.png").resize(size=(100, 100)))
 
         self.photo_label = Label(self.header, background="#F39F5A")
         self.photo_label.grid(row=8, column=1, padx=(0, 10), pady=(50, 10))
@@ -114,7 +114,7 @@ class Resumes(Frame):
 
         # Save Button
         self.image_save_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/floppy-disk_2344287.png").resize(size=(100, 100)))
+            Image.open("Images/floppy-disk_2344287.png").resize(size=(100, 100)))
 
         self.save_button = Button(self.header, image=str(self.image_save_button_tk), background="#F39F5A",
                                   borderwidth=0, text="Save", compound="top", font=self.font_label, pady=10,
@@ -123,7 +123,7 @@ class Resumes(Frame):
 
         # Back
         self.image_back_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/rewind_5542199.png").resize(size=(100, 100)))
+            Image.open("Images/rewind_5542199.png").resize(size=(100, 100)))
 
         self.back = Button(self.header, text="Back", command=self.back_button_clicked, borderwidth=0,
                            image=str(self.image_back_button_tk), background="#F39F5A", compound="top",
@@ -131,7 +131,7 @@ class Resumes(Frame):
         self.back.grid(row=7, column=1, padx=(0, 50), pady=(0, 10), sticky="e")
 
     def size(self, event):
-        self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
+        self.image = Image.open("Images/black-abstract-dark-3840x2160-9729.jpg")
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")

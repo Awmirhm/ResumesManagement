@@ -117,14 +117,14 @@ class ShowResumesFrame(Frame):
 
         # Next Button
         self.image_next_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/next_14018853.png").resize(size=(100, 100)))
+            Image.open("Images/next_14018853.png").resize(size=(100, 100)))
         self.next_button = Button(self.header, image=str(self.image_next_button_tk), background="#191919",
                                   activebackground="#191919", borderwidth=0, command=self.next_button_clicked)
         self.next_button.grid(row=7, column=3, padx=(0, 10), pady=(0, 10), sticky="ns")
 
         # Accept Button
         self.image_accept_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/like_6844679.png").resize(
+            Image.open("Images/like_6844679.png").resize(
                 size=(100, 100)
             ))
         self.accept_button = Button(self.header, background="#191919", activebackground="#191919", borderwidth=0,
@@ -135,7 +135,7 @@ class ShowResumesFrame(Frame):
 
         # Reject Button
         self.image_reject_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/dislike_6844686.png").resize(
+            Image.open("Images/dislike_6844686.png").resize(
                 size=(100, 100)
             ))
         self.reject_button = Button(self.header, background="#191919", activebackground="#191919", borderwidth=0,
@@ -145,7 +145,7 @@ class ShowResumesFrame(Frame):
         self.reject_button.grid(row=8, column=1, padx=(0, 300), pady=(0, 10), sticky="e")
 
         # Back To Home Button
-        self.image_home_button_tk = ImageTk.PhotoImage(Image.open("C:/Users/Maxsys/Pictures/home_14018833.png").resize(
+        self.image_home_button_tk = ImageTk.PhotoImage(Image.open("Images/home_14018833.png").resize(
             size=(100, 100)
         ))
 
@@ -155,7 +155,7 @@ class ShowResumesFrame(Frame):
         self.back_to_home_page_button.grid(row=9, column=1, padx=(0, 0), pady=(50, 10), sticky="ew")
 
     def size(self, event):
-        self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
+        self.image = Image.open("Images/black-abstract-dark-3840x2160-9729.jpg")
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")

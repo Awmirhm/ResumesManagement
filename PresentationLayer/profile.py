@@ -62,7 +62,7 @@ class ProfileFrame(Frame):
         self.username_entry.grid(row=1, column=1, columnspan=3, padx=(0, 10), pady=(10, 10), sticky="ew")
 
         # Back To Home Button
-        self.image_home_button_tk = ImageTk.PhotoImage(Image.open("C:/Users/Maxsys/Pictures/home_14018833.png").resize(
+        self.image_home_button_tk = ImageTk.PhotoImage(Image.open("Images/home_14018833.png").resize(
             size=(100, 100)
         ))
 
@@ -72,7 +72,7 @@ class ProfileFrame(Frame):
         self.back_to_home_page_button.grid(row=2, column=1, columnspan=3, padx=(0, 10), pady=(10, 10), sticky="ew")
 
     def size(self, event):
-        self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
+        self.image = Image.open("Images/black-abstract-dark-3840x2160-9729.jpg")
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")

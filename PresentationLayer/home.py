@@ -37,7 +37,7 @@ class HomeFrame(Frame):
 
         # Resumes Button
         self.image_resumes_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/personal-data_8346012.png").resize(size=(100, 100)))
+            Image.open("Images/personal-data_8346012.png").resize(size=(100, 100)))
 
         self.resumes_button = Button(self.header, image=str(self.image_resumes_button_tk), text="Resumes",
                                      compound="top", borderwidth=0, activebackground="#191919", background="#191919",
@@ -47,7 +47,7 @@ class HomeFrame(Frame):
 
         # Admin Profile Button
         self.image_profile_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/user_5037329.png").resize(
+            Image.open("Images/user_5037329.png").resize(
                 size=(100, 100)
             ))
 
@@ -60,7 +60,7 @@ class HomeFrame(Frame):
 
         # Back
         self.image_back_button_tk = ImageTk.PhotoImage(
-            Image.open("C:/Users/Maxsys/Pictures/back_14018855.png").resize(size=(100, 100)))
+            Image.open("Images/back_14018855.png").resize(size=(100, 100)))
 
         self.back = Button(self.header, text="Back", command=self.back_button_clicked, borderwidth=0,
                            image=str(self.image_back_button_tk), background="#191919",
@@ -68,7 +68,7 @@ class HomeFrame(Frame):
         self.back.grid(row=2, column=0, padx=(10, 10), pady=(10, 10), sticky="ew")
 
     def size(self, event):
-        self.image = Image.open("C:/Users/Maxsys/Pictures/black-abstract-dark-3840x2160-9729.jpg")
+        self.image = Image.open("Images/black-abstract-dark-3840x2160-9729.jpg")
         self.image_resize = self.image.resize(size=(event.width, event.height))
         self.image_tk = ImageTk.PhotoImage(self.image_resize)
         self.canvas.create_image(0, 0, image=self.image_tk, anchor="nw")

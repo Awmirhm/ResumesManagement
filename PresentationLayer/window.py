@@ -10,7 +10,7 @@ class Window(Tk):
         self.grid_rowconfigure(0, weight=1)
 
         self.title("Resumes Management")
-        icon_image = Image.open("C:/Users/Maxsys/Pictures/pngtree-vector-resume-icon-png-image_953181.jpg").resize(
+        icon_image = Image.open("Images/pngtree-vector-resume-icon-png-image_953181.jpg").resize(
             size=(500, 500))
         icon_image_tk = ImageTk.PhotoImage(icon_image)
         self.wm_iconphoto(False, str(icon_image_tk))
